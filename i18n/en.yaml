@@ -12,3 +12,7 @@
   translation: Skills & Proficiency
 - id: summary
   translation: Career Profile
+- id: slides
+  translation: Slides
+- id: video
+  translation: Video

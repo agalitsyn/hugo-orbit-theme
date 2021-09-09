@@ -1,0 +1,39 @@
+            <section class="section publications-section">
+                <h2 class="section-title">
+                    <i class="fa {{ .Site.Params.publications.icon }}"></i>
+                    {{ if (isset .Site.Params.publications "title" ) }}
+                    {{ .Site.Params.publications.title }}
+                    {{ else }}
+                    {{ i18n "publications" }}
+                    {{ end }}
+                </h2>
+                <div class="intro">
+                    <p>{{ with .Site.Params.publications.intro }}{{ . | markdownify }}{{ end }}</p>
+                </div>
+                <!--//intro-->
+                {{ range .Site.Params.publications.list }}
+                <div class="item">
+                    <span>
+                        [{{ .language }}] {{ .date }} {{ .event }} - {{ .title }}
+                    </span>
+                    <div class="details" style="margin-bottom: 20px;">
+                        {{ if .slides_url }}
+                        <span class="project-tagline">
+                            <a href="{{ .slides_url }}">
+                                {{ i18n "slides" }}
+                            </a>
+                        </span>
+                        {{ end }}
+                        {{ if .video_url }}
+                        <span class="project-tagline">
+                            <a href="{{ .video_url }}">
+                                {{ i18n "video" }}
+                            </a>
+                        </span>
+                        {{ end }}
+                    </div>
+                </div>
+                <!--//item-->
+                {{ end }}
+            </section>
+            <!--//section-->
